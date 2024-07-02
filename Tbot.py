@@ -68,8 +68,6 @@ def lalala(message):
             webbrowser.open('https://discord.com/channels/@me')
             bot.send_message(message.chat.id, 'discord запущен✅')
             
-            
-        #доработь
         elif message.text == '/st погода':
             webbrowser.open("https://www.google.ru/?hl=ru")
             weather_forecast = 'Пока недоступно'
@@ -92,14 +90,10 @@ def lalala(message):
                     seconds = time.time()
                     seconds_last = time.ctime(seconds)
                     output = f'AI: {l[32:-57]}, \n{seconds_last} \n'
-                    # bot.send_message(message.chat.id, '✅text generated✅') #::-outputDATA.7bdolphin
-                    # bot.send_message(message.chat.id, f'{seconds_last} \n ❌ Loading error no connection❗ ❌')
                     break
-
-            bot.send_message(message.chat.id, output)
-            
-            
                 
+            bot.send_message(message.chat.id, output)
+
  
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
