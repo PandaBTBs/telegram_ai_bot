@@ -1,5 +1,4 @@
-
-##Instruction manual
+#Instruction manual
 
 ```
 1) Get a TOKEN using BotFather
