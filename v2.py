@@ -1,3 +1,5 @@
+# https://t.me/alisa_assistent_ai_bot
+# https://www.youtube.com/watch?v=56mJxMMi9bA&t=873s
 from openai import OpenAI
 import telebot
 import random
@@ -21,7 +23,8 @@ def welcome(message):
     item5 = types.KeyboardButton("rec. OBS")
     item6 = types.KeyboardButton("vs_studio")
     item7 = types.KeyboardButton("discord")
-    item8 = types.KeyboardButton("weather_forecastа")
+    # item8 = types.KeyboardButton("weather_forecastа")
+    item8 = types.KeyboardButton("Сочи")
     item9 = types.KeyboardButton("music")
     item10 = types.KeyboardButton("news")
     item11 = types.KeyboardButton("video")
@@ -89,12 +92,15 @@ def lalala(message):
             webbrowser.open('https://discord.com/channels/@me')
             bot.send_message(message.chat.id, 'discord запущен✅')
             
-        elif message.text == 'weather_forecastа':
+        # elif message.text == 'weather_forecastа':
+        elif message.text == 'Сочи':
+        
+            bot.send_message(message.chat.id, "Введите город: ")
             
             import requests
             import datetime
             from pprint import pprint
-            from config import open_weather_token # your token https://home.openweathermap.org/ (api keys)
+            from config import open_weather_token # your api key https://home.openweathermap.org/
 
 
             def get_weather(city, open_weather_token):
@@ -140,20 +146,21 @@ def lalala(message):
                             f"Хорошего дня!"
                         )
                     bot.send_message(message.chat.id, rez)
+                    
                 except Exception as ex:
-                    bot.send_message(message.chat.id, ex)
-                    print("Проверьте название города")
+                    bot.send_message(message.chat.id, "Проверьте название города")
 
 
             def main():
-                bot.send_message(message.chat.id, "Введите город: ")
                 city = message.text
+                bot.send_message(message.chat.id, message.text)
                 get_weather(city, open_weather_token)
 
 
             if __name__ == '__main__':
                 main()
-      
+ 
+            
         else:
             bot.send_message(message.chat.id, 'loading ... ')
             
