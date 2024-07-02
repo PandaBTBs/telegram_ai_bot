@@ -1,4 +1,3 @@
-# https://t.me/alisa_assistent_ai_bot
 from openai import OpenAI
 import telebot
 import random
