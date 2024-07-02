@@ -14,15 +14,8 @@ bot = telebot.TeleBot(TOKEN)
 def welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton("Рандомное число")
-    item2 = types.KeyboardButton("Команды")
-    item3 = types.KeyboardButton("st steam")
-    item4 = types.KeyboardButton("st screenshot")
-    item5 = types.KeyboardButton("st rec. OBS")
-    item6 = types.KeyboardButton("st vs_studio")
-    item7 = types.KeyboardButton("st discord")
-    item8 = types.KeyboardButton("st weather forecast")
     
-    markup.add(item1, item2, item3, item4, item5, item6, item7, item8)
+    markup.add(item1)
  
     bot.send_message(message.chat.id, "Приветствую, {0.first_name}!\n            Я - <b>{1.first_name}</b>\n      исскуственный интелект, \nсозданный для помощи пользователям. \n <Команды> - интрукции".format(message.from_user, bot.get_me()),
         parse_mode='html', reply_markup=markup)
@@ -34,43 +27,6 @@ def lalala(message):
     if message.chat.type == 'private':
         if message.text == 'Рандомное число':
             bot.send_message(message.chat.id, str(random.randint(0,100)))
-            
-        elif message.text == 'Команды':
-            markup = types.InlineKeyboardMarkup(row_width=2)
-            item1 = types.InlineKeyboardButton("*Список команд*", callback_data='list')
- 
-            markup.add(item1)
- 
-            bot.send_message(message.chat.id, '---------?Хочешь узнать список команд?---------\n                 --✔Жми на кнопку✔--', reply_markup=markup)
-            
-        elif message.text == '/st стим':
-            import os
-            os.startfile('D:\steamT1\steam.exe')
-        
-            bot.send_message(message.chat.id, 'Стим запущен✅')
-            
-        elif message.text == '/st obs':
-            webbrowser.open("steam://rungameid/1905180")
-            bot.send_message(message.chat.id, 'OBS запущен✅')
-            
-        elif message.text == '/st скриншот':
-            import os
-            os.startfile(r'D:/steamT1/steamapps/common/ShareX/ShareX_Launcher')
-            bot.send_message(message.chat.id, 'sharex запущен✅')
-            
-        elif message.text == '/st vs studio':
-            webbrowser.open('steam://rungameid/1325860')
-            bot.send_message(message.chat.id, 'vs_studio запущен✅')
-            
-        elif message.text == '/st дискорд':
-
-            webbrowser.open('https://discord.com/channels/@me')
-            bot.send_message(message.chat.id, 'discord запущен✅')
-            
-        elif message.text == '/st погода':
-            webbrowser.open("https://www.google.ru/?hl=ru")
-            weather_forecast = 'Пока недоступно'
-            bot.send_message(message.chat.id, weather_forecast)
             
         else:
             bot.send_message(message.chat.id, 'loading ... ')
