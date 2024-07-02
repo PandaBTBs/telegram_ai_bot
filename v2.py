@@ -1,5 +1,3 @@
-# https://t.me/alisa_assistent_ai_bot
-# https://www.youtube.com/watch?v=56mJxMMi9bA&t=873s
 from openai import OpenAI
 import telebot
 import random
