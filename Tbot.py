@@ -4,7 +4,7 @@ import random
 from telebot import types
 import time
 import webbrowser
-import tkn
+import tkn #your token
 
 TOKEN = tkn.TOKEN
 
