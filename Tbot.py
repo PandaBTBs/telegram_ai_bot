@@ -54,15 +54,11 @@ def lalala(message):
 def callback_inline(call):
     try:
         if call.message:
-            if call.data == 'list':
-                bot.send_message(call.message.chat.id, '1. 🎲Рандомное число🎲 \n\n 2. ♦Команды♦ \n\n 3. /st стим \n\n 4. /st obs\n\n 5. /st скриншот \n\n 6. /st vs studio \n\n 7. /st дискорд \n\n 8. /st погода')
+            if call.data == 'none':
+pass
+        else:
+pass
                 
-            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="<__Список_команд__>",
-                reply_markup=None)
-
-            bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
-                text="empty message")
- 
     except Exception as e:
         print(repr(e))
         
