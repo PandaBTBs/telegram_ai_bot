@@ -2,8 +2,6 @@ from openai import OpenAI
 import telebot
 import random
 from telebot import types
-import time
-import webbrowser
 import tkn #your token
 
 TOKEN = tkn.TOKEN
