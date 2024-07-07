@@ -54,10 +54,8 @@ def lalala(message):
 def callback_inline(call):
     try:
         if call.message:
-            if call.data == 'none':
-pass
-        else:
-pass
+            if call.data == 'none': pass
+            else: pass
                 
     except Exception as e:
         print(repr(e))
