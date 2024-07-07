@@ -188,7 +188,7 @@ def callback_inline(call):
     try:
         if call.message:
             if call.data == 'list':
-                bot.send_message(call.message.chat.id, '1. /st steam \n\n 4. /st rec. OBS\n\n 5. /st sharex \n\n 6. /st vs_studio \n\n 7. /st discord \n\n 8. /st weather_forecastа')
+                bot.send_message(call.message.chat.id, 'None')
                 
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="list cmds:",
                 reply_markup=None)
