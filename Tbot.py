@@ -47,16 +47,6 @@ def lalala(message):
                 
             bot.send_message(message.chat.id, output)
 
- 
-@bot.callback_query_handler(func=lambda call: True)
-def callback_inline(call):
-    try:
-        if call.message:
-            if call.data == 'none': pass
-            else: pass
-                
-    except Exception as e:
-        print(repr(e))
-        
+
 
 bot.polling(none_stop=True)
